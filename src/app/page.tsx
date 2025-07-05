@@ -49,6 +49,7 @@ import Splash from "../components/Splash";
 import Gallery from "../components/Gallery";
 import ContactUs from "../components/ContactUs";
 import Menu from "../components/Menu";
+import { getAssetPath } from "../lib/getAssetPath";
 
 export default function Home() {
 	const { colorMode } = useColorMode();
@@ -120,7 +121,7 @@ export default function Home() {
 			text: "Turn is a simple, yet difficult game. If you think you have what it takes, go download and give it a try. Good luck.",
 			resource: {
 				type: "video",
-				value: "/assets/videos/turn.mp4",
+				value: getAssetPath("/assets/videos/turn.mp4"),
 			},
 		},
 		{
