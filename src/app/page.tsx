@@ -21,13 +21,16 @@ import { FaArrowUp, FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
 
 // Logo
 import logo from "../../public/assets/images/logo.png";
-
 // Main profile pic
 import me from "../../public/assets/images/me.jpg";
-
-// testimonials
+// Testimonials
 import notMe from "../../public/assets/images/not me.jpg";
 import jeff from "../../public/assets/images/jeff bezos.jpg";
+// projects
+import ul from "../../public/assets/images/projects/ul.png";
+import cliffs from "../../public/assets/images/projects/cliffs.png";
+import ch from "../../public/assets/images/projects/ch.png";
+import vm from "../../public/assets/images/projects/vm.png";
 
 import {
 	RiNextjsFill,
@@ -36,15 +39,17 @@ import {
 	RiWordpressFill,
 } from "react-icons/ri";
 import { SiApollographql, SiChakraui } from "react-icons/si";
-import Splash from "@/components/Splash";
-import MinecraftMap from "@/components/ImageMap";
-import Gallery from "@/components/Gallery";
-import Menu from "@/components/Menu";
-import ContactUs from "@/components/ContactUs";
-import { useColorMode } from "@/components/ui/color-mode";
-import FadeOnScroll from "@/components/FadeOnSroll/FadeOnScroll";
+
 import { ReactNode, useEffect, useState } from "react";
 import dayjs from "dayjs";
+import { useColorMode } from "../components/ui/color-mode";
+import MinecraftMap from "../components/MinecraftMap";
+import FadeOnScroll from "../components/FadeOnSroll/FadeOnScroll";
+import Splash from "../components/Splash";
+import Gallery from "../components/Gallery";
+import ContactUs from "../components/ContactUs";
+import Menu from "../components/Menu";
+import { getAssetPath } from "../lib/getAssetPath";
 
 export default function Home() {
 	const { colorMode } = useColorMode();
@@ -77,7 +82,7 @@ export default function Home() {
 			text: "Founded in 1862 as a patriotic society to support the Union and the policies of President Abraham Lincoln, The Union League of Philadelphia laid the philosophical foundation of other Union Leagues across a nation torn by civil war. The League has hosted U.S. presidents, heads of state, industrialists, entertainers and dignitaries from around the globe and has proudly supported the American military in each conflict since the Civil War. The Union League continues to be driven by its founding motto, Amor Patriae Ducit or Love of Country Leads.",
 			resource: {
 				type: "img",
-				value: "/assets/images/projects/ul.png",
+				value: ul.src,
 				url: "https://member.unionleague.org/",
 			},
 		},
@@ -86,7 +91,7 @@ export default function Home() {
 			text: "At The Cliffs, we seize the day, every day. Here in the glorious Carolina mountains are seven vibrant communities — three on sparkling Lake Keowee not far from Clemson, three more high up in the cool mountain air near thriving Greenville, South Carolina, and one just minutes to the Southern gem of Asheville, North Carolina. There isn’t one that’s best, but we promise there is one just right for you. And as a member, each is yours to enjoy.",
 			resource: {
 				type: "img",
-				value: "/assets/images/projects/cliffs.png",
+				value: cliffs.src,
 				url: "https://members.cliffsliving.com/",
 			},
 		},
@@ -95,7 +100,7 @@ export default function Home() {
 			text: "Vicmead Hunt Club, an intimate and highly sought-after private club located in Wilmington, Delaware, has been enriching the lives of its members for over a century. ",
 			resource: {
 				type: "img",
-				value: "/assets/images/projects/vm.png",
+				value: vm.src,
 				url: "https://www.vicmead.com/",
 			},
 		},
@@ -104,7 +109,7 @@ export default function Home() {
 			text: "The Carriage House...",
 			resource: {
 				type: "img",
-				value: "/assets/images/projects/ch.png",
+				value: ch.src,
 				url: "https://members.carriagehousepb.com/",
 			},
 		},
@@ -116,7 +121,7 @@ export default function Home() {
 			text: "Turn is a simple, yet difficult game. If you think you have what it takes, go download and give it a try. Good luck.",
 			resource: {
 				type: "video",
-				value: "/assets/videos/turn.mp4",
+				value: getAssetPath("/assets/videos/turn.mp4"),
 			},
 		},
 		{
@@ -124,7 +129,22 @@ export default function Home() {
 			text: "A simple component that takes coordinates from a specified object and maps interact-able areas to the inner image(Modified to look minecrafty)",
 			resource: {
 				type: "component",
-				value: <MinecraftMap overflow="hidden" />,
+				value: (
+					<MinecraftMap
+						width={
+							{
+								base: "calc(50% - 1.5em)",
+								contentWidthDown: "100%",
+							} as any
+						}
+						borderRadius="0.25em"
+						shadow="paper"
+						flexGrow={1}
+						aspectRatio={3 / 2}
+						objectFit="cover"
+						overflow="hidden"
+					/>
+				),
 			},
 		},
 	];

@@ -1,5 +1,12 @@
 import type { NextConfig } from "next";
 
+// const nextConfig: NextConfig = {
+// 	/* config options here */
+// 	experimental: {
+// 		optimizePackageImports: ["@chakra-ui/react"],
+// 	},
+// };
+
 const nextConfig: NextConfig = {
 	/* config options here */
 	basePath: "/portfolio-2025",
@@ -14,4 +21,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-2;

@@ -90,8 +90,6 @@ export default function FadeOnScroll({
 										}
 									}
 								}
-
-								console.log(children);
 							} else if (type === "childrenSynced") {
 								const children = Array.from(el.children || []);
 

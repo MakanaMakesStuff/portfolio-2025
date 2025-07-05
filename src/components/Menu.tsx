@@ -9,7 +9,7 @@ import {
 	Box,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { MenuContent, MenuRoot, MenuTrigger } from "@/components/ui/menu";
+import { MenuContent, MenuRoot, MenuTrigger } from "@/src/components/ui/menu";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Menu() {

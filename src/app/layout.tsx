@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Share_Tech } from "next/font/google";
-import { Provider } from "@/components/ui/provider";
+import { Provider } from "../components/ui/provider";
 
 const shareTech = Share_Tech({
 	variable: "--font-share-tech",

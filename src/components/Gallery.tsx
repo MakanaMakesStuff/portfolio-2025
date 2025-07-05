@@ -9,7 +9,7 @@ import d from "../../public/assets/images/who am i/004.gif";
 import e from "../../public/assets/images/who am i/005.gif";
 import f from "../../public/assets/images/who am i/006.gif";
 import { useCallback } from "react";
-import { getMosaic } from "@/lib/msort";
+import { getMosaic } from "@/src/lib/msort";
 
 export default function Gallery({ ...props }: BoxProps) {
 	const gallery = useCallback((e: HTMLDivElement) => {

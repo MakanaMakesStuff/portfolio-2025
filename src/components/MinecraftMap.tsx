@@ -6,7 +6,6 @@ import grassImg from "../../public/assets/images/minecraft/grass.png";
 import redImg from "../../public/assets/images/minecraft/red.png";
 import whiteImg from "../../public/assets/images/minecraft/white.png";
 import { Box, BoxProps } from "@chakra-ui/react";
-import NextImage from "next/image";
 
 interface Coords {
 	x: number;
@@ -143,7 +142,7 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 		} else {
 			drawBackground();
 		}
-	}, [blocks, drawBackground]);
+	}, [blocks]);
 
 	return (
 		<Box width="100%" maxWidth="800px" {...props}>
@@ -153,13 +152,11 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 				onMouseMove={getMousePos}
 				onClick={() => addBlock(coords)}
 			/>
-			<NextImage
+			<img
 				ref={imageRef}
 				src={minecraft.src}
 				alt="Minecraft"
 				style={{ display: "none" }}
-				width={100}
-				height={100}
 			/>
 		</Box>
 	);
