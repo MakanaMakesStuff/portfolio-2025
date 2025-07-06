@@ -542,12 +542,12 @@ export default function Home() {
 								) : project.resource.type == "video" ? (
 									<video
 										src={project.resource.value as string}
-										preload="metadata"
 										autoPlay
 										loop
 										muted
 										playsInline
-									></video>
+										preload="metadata"
+									/>
 								) : (
 									<Image
 										src={project.resource.value as string}
