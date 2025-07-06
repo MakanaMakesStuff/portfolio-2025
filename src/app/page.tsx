@@ -498,8 +498,7 @@ export default function Home() {
 							flexDirection={
 								{
 									base: (i + 1) % 2 == 0 ? "row-reverse" : "row",
-									contentWidthDown:
-										(i + 1) % 2 == 0 ? "column" : "column-reverse",
+									contentWidthDown: "column-reverse",
 								} as any
 							}
 							gap="1em 3em"

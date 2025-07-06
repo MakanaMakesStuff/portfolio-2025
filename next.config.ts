@@ -17,7 +17,6 @@ const nextConfig: NextConfig = {
 	basePath: "/portfolio-2025",
 	output: "export",
 	reactStrictMode: true,
-	assetPrefix: "/portfolio-2025/",
 	experimental: {
 		optimizePackageImports: ["@chakra-ui/react"],
 	},
