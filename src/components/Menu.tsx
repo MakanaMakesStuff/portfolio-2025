@@ -57,7 +57,7 @@ export default function Menu() {
 					outline="none"
 					asChild
 				>
-					<Link href="">
+					<Link href="https://github.com/MakanaMakesStuff">
 						<FaGithub />
 					</Link>
 				</CHLink>
@@ -178,7 +178,7 @@ export default function Menu() {
 							outline="none"
 							asChild
 						>
-							<Link href="">
+							<Link href="https://github.com/MakanaMakesStuff">
 								<FaGithub />
 							</Link>
 						</CHLink>

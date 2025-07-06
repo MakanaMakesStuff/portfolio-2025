@@ -13,11 +13,10 @@ import {
 	Icon,
 	Stack,
 	SimpleGrid,
-	Separator,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowUp, FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
+import { FaCode, FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
 
 // Logo
 import logo from "../../public/assets/images/logo.png";
@@ -42,17 +41,16 @@ import { SiApollographql, SiChakraui } from "react-icons/si";
 
 import { ReactNode, useEffect, useState } from "react";
 import dayjs from "dayjs";
-import { useColorMode } from "../components/ui/color-mode";
 import MinecraftMap from "../components/MinecraftMap";
 import FadeOnScroll from "../components/FadeOnSroll/FadeOnScroll";
 import Splash from "../components/Splash";
 import Gallery from "../components/Gallery";
 import ContactUs from "../components/ContactUs";
 import Menu from "../components/Menu";
+import Footer from "../components/Footer";
+import { IconType } from "react-icons";
 
 export default function Home() {
-	const { colorMode } = useColorMode();
-
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -67,31 +65,37 @@ export default function Home() {
 
 	interface ProjectI {
 		title: string;
-		text: string;
+		text: ReactNode;
 		resource: {
 			type: "img" | "video" | "component";
 			value: ReactNode;
 			url?: string;
+			urlLabel?: string;
+			urlIcon?: ReactNode;
 		};
 	}
 
 	const projects: ProjectI[] = [
 		{
 			title: "The Unionleague of Philidelphia",
-			text: "Founded in 1862 as a patriotic society to support the Union and the policies of President Abraham Lincoln, The Union League of Philadelphia laid the philosophical foundation of other Union Leagues across a nation torn by civil war. The League has hosted U.S. presidents, heads of state, industrialists, entertainers and dignitaries from around the globe and has proudly supported the American military in each conflict since the Civil War. The Union League continues to be driven by its founding motto, Amor Patriae Ducit or Love of Country Leads.",
+			text: "Founded in 1862 as a patriotic society to support the Union and the policies of President Abraham Lincoln, The Union League of Philadelphia laid the philosophical foundation of other Union Leagues across a nation torn by civil war. ",
 			resource: {
 				type: "img",
 				value: ul.src,
 				url: "https://member.unionleague.org/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
 			},
 		},
 		{
 			title: "The Cliffs | Private Luxury Communities",
-			text: "At The Cliffs, we seize the day, every day. Here in the glorious Carolina mountains are seven vibrant communities — three on sparkling Lake Keowee not far from Clemson, three more high up in the cool mountain air near thriving Greenville, South Carolina, and one just minutes to the Southern gem of Asheville, North Carolina. There isn’t one that’s best, but we promise there is one just right for you. And as a member, each is yours to enjoy.",
+			text: "At The Cliffs, we seize the day, every day. Here in the glorious Carolina mountains are seven vibrant communities — three on sparkling Lake Keowee not far from Clemson, three more high up in the cool mountain air near thriving Greenville, South Carolina, and one just minutes to the Southern gem of Asheville, North Carolina.",
 			resource: {
 				type: "img",
 				value: cliffs.src,
 				url: "https://members.cliffsliving.com/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
 			},
 		},
 		{
@@ -101,15 +105,19 @@ export default function Home() {
 				type: "img",
 				value: vm.src,
 				url: "https://www.vicmead.com/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
 			},
 		},
 		{
 			title: "The Carriage House",
-			text: "The Carriage House...",
+			text: "The Carriage House is an exclusive private Club with Membership offered by invitation only.",
 			resource: {
 				type: "img",
 				value: ch.src,
 				url: "https://members.carriagehousepb.com/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
 			},
 		},
 	];
@@ -117,7 +125,18 @@ export default function Home() {
 	const personalProjects: ProjectI[] = [
 		{
 			title: "Turn is here!",
-			text: "Turn is a simple, yet difficult game. If you think you have what it takes, go download and give it a try. Good luck.",
+			text: (
+				<>
+					Turn is a simple, yet difficult game. If you think you have what it
+					takes, go download and give it a try. Good luck.
+					<br />
+					<strong>
+						Note: Thanks to google's new and highly unreasonable app
+						verification and testing phase, Turn is no longer listed on google
+						play
+					</strong>
+				</>
+			),
 			resource: {
 				type: "video",
 				value: "/portfolio-2025/assets/videos/turn.mp4",
@@ -144,6 +163,9 @@ export default function Home() {
 						overflow="hidden"
 					/>
 				),
+				url: "https://github.com/MakanaMakesStuff/Canvas-Image-Map",
+				urlLabel: "View Code",
+				urlIcon: <FaCode />,
 			},
 		},
 	];
@@ -237,7 +259,7 @@ export default function Home() {
 								}}
 								asChild
 							>
-								<Link href="">
+								<Link href="https://github.com/MakanaMakesStuff">
 									<FaGithub />
 								</Link>
 							</CHLink>
@@ -396,7 +418,7 @@ export default function Home() {
 								} as any
 							}
 							gap="1em 3em"
-							alignItems="stretch"
+							alignItems="center"
 							width="100%"
 						>
 							<VStack
@@ -426,10 +448,8 @@ export default function Home() {
 										asChild
 									>
 										<Link href={project.resource.url}>
-											<span>Visit Site</span>
-											<Icon asChild>
-												<FaGlobe />
-											</Icon>
+											<span>{project.resource.urlLabel}</span>
+											<Icon asChild>{project.resource.urlIcon}</Icon>
 										</Link>
 									</CHLink>
 								) : null}
@@ -521,6 +541,22 @@ export default function Home() {
 								</Heading>
 
 								<Text color="secondaryToWhite">{project.text}</Text>
+
+								{project.resource.url ? (
+									<CHLink
+										bg="secondaryToPrimary"
+										color="white"
+										p="0.5em 1em"
+										textDecoration="none"
+										mt="1em"
+										asChild
+									>
+										<Link href={project.resource.url}>
+											<span>{project.resource.urlLabel}</span>
+											<Icon asChild>{project.resource.urlIcon}</Icon>
+										</Link>
+									</CHLink>
+								) : null}
 							</VStack>
 
 							<Box
@@ -719,85 +755,7 @@ export default function Home() {
 			</FadeOnScroll>
 
 			<Splash hideBottom>
-				<VStack
-					as="footer"
-					p="2em"
-					width="100%"
-					gap="5em"
-					color="secondaryToWhite"
-				>
-					<CHImage
-						filter={
-							colorMode == "light"
-								? "invert(48%) sepia(17%) saturate(1000%) hue-rotate(232deg) brightness(95%) contrast(90%)"
-								: "white"
-						}
-						asChild
-					>
-						<Image src={logo.src} width={15} height={15} alt="Footer Logo" />
-					</CHImage>
-
-					<SimpleGrid
-						gridTemplateColumns="12ch 1fr 12ch"
-						alignItems="stretch"
-						gap="0"
-					>
-						<VStack justifyContent="center" alignItems="flex-end" p="2em">
-							<CHLink
-								borderRadius="0.25em"
-								transition="all 0.2s ease-in-out"
-								outline="none"
-								asChild
-							>
-								<Link href="">
-									<FaArrowUp />
-								</Link>
-							</CHLink>
-
-							<CHLink outline="none" asChild>
-								<Link href="#about">About</Link>
-							</CHLink>
-
-							<CHLink outline="none" asChild>
-								<Link href="#contact">Contact</Link>
-							</CHLink>
-						</VStack>
-
-						<Separator
-							orientation="vertical"
-							borderColor="secondaryToWhite"
-							borderWidth="1px"
-						/>
-
-						<VStack justifyContent="center" p="2em" alignItems="flex-start">
-							<CHLink
-								borderRadius="0.25em"
-								transition="all 0.2s ease-in-out"
-								outline="none"
-								asChild
-							>
-								<Link href="">
-									<FaGithub />
-								</Link>
-							</CHLink>
-
-							<CHLink
-								borderRadius="0.25em"
-								transition="all 0.2s ease-in-out"
-								outline="none"
-								asChild
-							>
-								<Link href="">
-									<FaLinkedin />
-								</Link>
-							</CHLink>
-						</VStack>
-					</SimpleGrid>
-
-					<Text textAlign="center">
-						Copyright @ {today.year()} Makanaokeakua Edwards All rights reserved
-					</Text>
-				</VStack>
+				<Footer />
 			</Splash>
 		</Box>
 	);

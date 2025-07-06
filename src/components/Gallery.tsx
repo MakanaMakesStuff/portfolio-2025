@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, BoxProps } from "@chakra-ui/react";
-import Image from "next/image";
+import CHImage from "next/image";
 import a from "../../public/assets/images/who am i/001.gif";
 import b from "../../public/assets/images/who am i/002.gif";
 import c from "../../public/assets/images/who am i/003.gif";
@@ -36,17 +36,17 @@ export default function Gallery({ ...props }: BoxProps) {
 			ref={gallery}
 			{...props}
 		>
-			<Image src={a.src} width={200} height={150} alt="Who am I? - 001" />
+			<CHImage src={a.src} width={200} height={150} alt="Who am I? - 001" />
 
-			<Image src={b.src} width={200} height={150} alt="Who am I? - 002" />
+			<CHImage src={b.src} width={200} height={150} alt="Who am I? - 002" />
 
-			<Image src={c.src} width={200} height={150} alt="Who am I? - 003" />
+			<CHImage src={c.src} width={200} height={150} alt="Who am I? - 003" />
 
-			<Image src={d.src} width={200} height={150} alt="Who am I? - 004" />
+			<CHImage src={d.src} width={200} height={150} alt="Who am I? - 004" />
 
-			<Image src={e.src} width={200} height={150} alt="Who am I? - 005" />
+			<CHImage src={e.src} width={200} height={150} alt="Who am I? - 005" />
 
-			<Image src={f.src} width={200} height={150} alt="Who am I? - 006" />
+			<CHImage src={f.src} width={200} height={150} alt="Who am I? - 006" />
 		</Box>
 	);
 }
