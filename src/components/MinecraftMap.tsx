@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import minecraft from "../../public/assets/images/minecraft/bg.png";
 import grassImg from "../../public/assets/images/minecraft/grass.png";
 import redImg from "../../public/assets/images/minecraft/red.png";
@@ -54,7 +54,7 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 		if (block) ctx.drawImage(block, coords.x, coords.y, snapx, snapy);
 	};
 
-	const drawBackground = () => {
+	const drawBackground = useCallback(() => {
 		const canvas = canvasRef.current;
 		const image = imageRef.current;
 		if (!canvas || !image) return;
@@ -68,7 +68,7 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.drawImage(image, 0, 0);
 		blocks.forEach((block) => drawBlock(block, "grass"));
-	};
+	}, [blocks]);
 
 	const renderBlock = ({ x, y }: Coords) => {
 		x = Math.floor(x / snapx) * snapx;
@@ -142,7 +142,7 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 		} else {
 			drawBackground();
 		}
-	}, [blocks]);
+	}, [blocks, drawBackground]);
 
 	return (
 		<Box width="100%" maxWidth="800px" {...props}>
@@ -152,6 +152,7 @@ export default function MinecraftMap({ ...props }: BoxProps) {
 				onMouseMove={getMousePos}
 				onClick={() => addBlock(coords)}
 			/>
+			{/* eslint-disable-next-line @next/next/no-img-element */}
 			<img
 				ref={imageRef}
 				src={minecraft.src}
