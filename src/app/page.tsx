@@ -48,7 +48,6 @@ import Gallery from "../components/Gallery";
 import ContactUs from "../components/ContactUs";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
-import { IconType } from "react-icons";
 
 export default function Home() {
 	const [mounted, setMounted] = useState(false);
