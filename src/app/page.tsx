@@ -28,6 +28,7 @@ import jeff from "../../public/assets/images/jeff bezos.jpg";
 // projects
 import ul from "../../public/assets/images/projects/ul.png";
 import cliffs from "../../public/assets/images/projects/cliffs.png";
+import windsor from "../../public/assets/images/projects/windsor.png";
 import ch from "../../public/assets/images/projects/ch.png";
 import vm from "../../public/assets/images/projects/vm.png";
 
@@ -87,6 +88,17 @@ export default function Home() {
 			},
 		},
 		{
+			title: "Windsor",
+			text: "Windsor is a New Urbanism development that embodies the ideals of renowned town planners and architects Andrés Duany and Elizabeth Plater-Zyberk. Every detail is designed for life—for Members, their families, and their community. New Urbanism promotes the creation of diverse, mixed-use communities that are sustainable, connected, and walkable. The seaside village of Windsor features architecture and landscape design that celebrates local history, climate, ecology, and traditional building practices.",
+			resource: {
+				type: "img",
+				value: windsor.src,
+				url: "https://windsorcommunity.org/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
+			},
+		},
+		{
 			title: "The Cliffs | Private Luxury Communities",
 			text: "At The Cliffs, we seize the day, every day. Here in the glorious Carolina mountains are seven vibrant communities — three on sparkling Lake Keowee not far from Clemson, three more high up in the cool mountain air near thriving Greenville, South Carolina, and one just minutes to the Southern gem of Asheville, North Carolina.",
 			resource: {
@@ -132,7 +144,7 @@ export default function Home() {
 					<strong>
 						Note: Thanks to google's new and highly unreasonable app
 						verification and testing phase, Turn is no longer listed on google
-						play
+						play :(
 					</strong>
 				</>
 			),
@@ -454,7 +466,7 @@ export default function Home() {
 								) : null}
 							</VStack>
 
-							<Box
+							<CHLink
 								width={
 									{
 										base: "calc(50% - 1.5em)",
@@ -466,27 +478,40 @@ export default function Home() {
 								flexGrow={1}
 								aspectRatio={3 / 2}
 								objectFit="cover"
+								overflow="hidden"
 								asChild
 							>
-								{project.resource.type == "component" ? (
-									project.resource.value
-								) : project.resource.type == "video" ? (
-									<video
-										src={project.resource.value as string}
-										preload="metadata"
-										autoPlay
-										loop
-										muted
-									></video>
-								) : (
-									<Image
-										src={project.resource.value as string}
-										alt={`Project ${i + 1} Image`}
-										width={200}
-										height={150}
-									/>
-								)}
-							</Box>
+								<Link href={project.resource.url!}>
+									{project.resource.type == "component" ? (
+										project.resource.value
+									) : project.resource.type == "video" ? (
+										<video
+											src={project.resource.value as string}
+											preload="metadata"
+											autoPlay
+											loop
+											style={{
+												width: "100%",
+												height: "100%",
+												objectFit: "cover",
+											}}
+											muted
+										></video>
+									) : (
+										<Image
+											src={project.resource.value as string}
+											alt={`Project ${i + 1} Image`}
+											width={200}
+											height={150}
+											style={{
+												width: "100%",
+												height: "100%",
+												objectFit: "cover",
+											}}
+										/>
+									)}
+								</Link>
+							</CHLink>
 						</Stack>
 					</FadeOnScroll>
 				))}

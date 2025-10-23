@@ -1,0 +1,97 @@
+/* [project]/src/components/FadeOnSroll/OnScroll.module.scss.module.css [app-client] (css) */
+.OnScroll-module-scss-module__aiA-DG__fadeIn {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeIn;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.OnScroll-module-scss-module__aiA-DG__fadeInZoom {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeInZoom;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.OnScroll-module-scss-module__aiA-DG__fadeInBottom {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeInBottom;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.OnScroll-module-scss-module__aiA-DG__fadeInTop {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeInTop;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.OnScroll-module-scss-module__aiA-DG__fadeInLeft {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeInLeft;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.OnScroll-module-scss-module__aiA-DG__fadeInRight {
+  animation: 1s forwards OnScroll-module-scss-module__aiA-DG__fadeInRight;
+}
+
+@keyframes OnScroll-module-scss-module__aiA-DG__fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/*# sourceMappingURL=src_components_FadeOnSroll_OnScroll_module_scss_module_7b293525.css.map*/
