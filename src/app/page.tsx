@@ -168,6 +168,7 @@ export default function Home() {
 					Turn is a simple, yet difficult game. If you think you have what it
 					takes, go download and give it a try. Good luck.
 					<br />
+					<br />
 					<strong>
 						Note: Thanks to google's new and highly unreasonable app
 						verification and testing phase, Turn is no longer listed on google
