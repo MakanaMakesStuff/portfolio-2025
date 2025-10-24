@@ -261,7 +261,7 @@ export default function Home() {
 						</Heading>
 
 						<Heading as="h4" color="text">
-							Software Engineer
+							Front End Engineer
 						</Heading>
 
 						<Text color="text">
@@ -723,7 +723,7 @@ export default function Home() {
 									<Heading as="h4">
 										Notme Mcgee -{" "}
 										<Box as="span" color="primary">
-											Software Engineer at GoogFace
+											Full Stack Engineer at GoogFace
 										</Box>
 									</Heading>
 
