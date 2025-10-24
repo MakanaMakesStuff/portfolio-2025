@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { MenuContent, MenuRoot, MenuTrigger } from "@/src/components/ui/menu";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import ScrollButton from "./ScrollButton";
 
 export default function Menu() {
 	const { open, onToggle } = useDisclosure();
@@ -150,27 +151,28 @@ export default function Menu() {
 						borderRadius="0.25em"
 						p="0.5em 1em"
 						gap="1em"
+						color="whiteToSecondary"
 					>
-						<CHLink color="whiteToSecondary" outline="none" asChild>
+						<CHLink color="inherit" outline="none" asChild>
 							<Link href="/">Home</Link>
 						</CHLink>
 
-						<CHLink color="whiteToSecondary" outline="none" asChild>
-							<Link href="#projects">Projects</Link>
-						</CHLink>
+						<ScrollButton id="projects" onCallback={onToggle}>
+							Projects
+						</ScrollButton>
 
-						<CHLink color="whiteToSecondary" outline="none" asChild>
-							<Link href="#about">About</Link>
-						</CHLink>
+						<ScrollButton id="about" onCallback={onToggle}>
+							About
+						</ScrollButton>
 
-						<CHLink color="whiteToSecondary" outline="none" asChild>
-							<Link href="#contact">Contact</Link>
-						</CHLink>
+						<ScrollButton id="contact" onCallback={onToggle}>
+							Contact
+						</ScrollButton>
 
 						<CHLink
-							color="whiteToSecondary"
 							borderRadius="0.25em"
 							transition="all 0.2s ease-in-out"
+							color="inherit"
 							_hover={{
 								bg: "secondary",
 								color: "white",

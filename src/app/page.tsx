@@ -18,8 +18,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCode, FaGithub, FaGlobe, FaLinkedin } from "react-icons/fa";
 
-// Logo
-import logo from "../../public/assets/images/logo.png";
 // Main profile pic
 import me from "../../public/assets/images/me.jpg";
 // Testimonials
@@ -48,8 +46,8 @@ import FadeOnScroll from "../components/FadeOnSroll/FadeOnScroll";
 import Splash from "../components/Splash";
 import Gallery from "../components/Gallery";
 import ContactUs from "../components/ContactUs";
-import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import ScrollButton from "../components/ScrollButton";
 
 export default function Home() {
 	const [mounted, setMounted] = useState(false);
@@ -216,25 +214,7 @@ export default function Home() {
 	const age = Math.floor(today.diff(birthday) / 31557600000);
 
 	return (
-		<Box width="100%" bg="background">
-			<HStack
-				as="header"
-				width="100%"
-				justifyContent="space-between"
-				maxWidth="breakpoint-xl"
-				p="1em"
-				position="sticky"
-				top={0}
-				left={0}
-				right={0}
-				m="auto"
-				zIndex={1000}
-			>
-				<Image src={logo.src} alt="Logo" width={15} height={15} />
-
-				<Menu />
-			</HStack>
-
+		<Box width="100%" overflowX="hidden">
 			<FadeOnScroll id="main" animation="fadeInTop">
 				<HStack
 					id="main"
@@ -270,21 +250,20 @@ export default function Home() {
 						</Text>
 
 						<HStack alignItems="stretch">
-							<CHLink
-								bg="secondaryToPrimary"
-								color="text"
-								p="0.5em 1em"
+							<ScrollButton
+								background="secondaryToPrimary!"
+								color="text!"
+								p="0.5em 1em!"
 								borderRadius="0.25em"
 								transition="all 0.2s ease-in-out"
 								_hover={{
-									bg: "primaryToWhite",
-									color: "whiteToSecondary",
+									bg: "primaryToWhite!",
+									color: "whiteToSecondary!",
 								}}
-								textDecoration="none"
-								asChild
+								id="projects"
 							>
-								<Link href="">Explore</Link>
-							</CHLink>
+								Explore
+							</ScrollButton>
 
 							<CHLink
 								bg="whiteToPrimary"
@@ -436,7 +415,14 @@ export default function Home() {
 				</FadeOnScroll>
 			</Splash>
 
-			<VStack width="100%" p="1em" gap="4em" maxWidth="breakpoint-lg" m="auto">
+			<VStack
+				width="100%"
+				p="1em"
+				gap="4em"
+				maxWidth="breakpoint-lg"
+				m="auto"
+				id="projects"
+			>
 				<Heading as="h3" color="white" textAlign="center">
 					Professional Work
 				</Heading>

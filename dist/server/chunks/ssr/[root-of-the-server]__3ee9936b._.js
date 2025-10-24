@@ -89,7 +89,7 @@ const ColorModeButton = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
             boxSize: "8"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/color-mode.tsx",
-            lineNumber: 64,
+            lineNumber: 65,
             columnNumber: 25
         }, void 0),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$chakra$2d$ui$2f$react$2f$dist$2f$esm$2f$components$2f$button$2f$icon$2d$button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["IconButton"], {
@@ -107,17 +107,17 @@ const ColorModeButton = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$pro
             },
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ColorModeIcon, {}, void 0, false, {
                 fileName: "[project]/src/components/ui/color-mode.tsx",
-                lineNumber: 79,
+                lineNumber: 80,
                 columnNumber: 5
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/ui/color-mode.tsx",
-            lineNumber: 65,
+            lineNumber: 66,
             columnNumber: 4
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/color-mode.tsx",
-        lineNumber: 64,
+        lineNumber: 65,
         columnNumber: 3
     }, this);
 });
@@ -132,7 +132,7 @@ const LightMode = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
         ...props
     }, void 0, false, {
         fileName: "[project]/src/components/ui/color-mode.tsx",
-        lineNumber: 88,
+        lineNumber: 89,
         columnNumber: 4
     }, this);
 });
@@ -147,7 +147,7 @@ const DarkMode = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d
         ...props
     }, void 0, false, {
         fileName: "[project]/src/components/ui/color-mode.tsx",
-        lineNumber: 104,
+        lineNumber: 105,
         columnNumber: 4
     }, this);
 });
@@ -241,7 +241,8 @@ const customConfig = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
     },
     globalCss: {
         "html, body": {
-            fontSize: "16px !important"
+            fontSize: "16px !important",
+            overflowX: "hidden"
         },
         h1: {
             fontSize: "clamp(2rem, 4vw, 3rem) !important"
@@ -274,12 +275,12 @@ function Provider(props) {
             ...props
         }, void 0, false, {
             fileName: "[project]/src/components/ui/provider.tsx",
-            lineNumber: 115,
+            lineNumber: 116,
             columnNumber: 4
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/provider.tsx",
-        lineNumber: 114,
+        lineNumber: 115,
         columnNumber: 3
     }, this);
 }

@@ -12,11 +12,12 @@ import {
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowUp, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 // Logo
 import logo from "../../public/assets/images/logo.png";
 import { useColorMode } from "./ui/color-mode";
+import ScrollButton from "./ScrollButton";
 
 export default function Footer({ ...props }: StackProps) {
 	const { colorMode } = useColorMode();
@@ -48,24 +49,11 @@ export default function Footer({ ...props }: StackProps) {
 				gap="0"
 			>
 				<VStack justifyContent="center" alignItems="flex-end" p="2em">
-					<CHLink
-						borderRadius="0.25em"
-						transition="all 0.2s ease-in-out"
-						outline="none"
-						asChild
-					>
-						<Link href="">
-							<FaArrowUp />
-						</Link>
-					</CHLink>
+					<ScrollButton id="projects">Projects</ScrollButton>
 
-					<CHLink outline="none" asChild>
-						<Link href="#about">About</Link>
-					</CHLink>
+					<ScrollButton id="about">About</ScrollButton>
 
-					<CHLink outline="none" asChild>
-						<Link href="#contact">Contact</Link>
-					</CHLink>
+					<ScrollButton id="contact">Contact</ScrollButton>
 				</VStack>
 
 				<Separator
