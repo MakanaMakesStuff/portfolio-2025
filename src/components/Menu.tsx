@@ -30,25 +30,46 @@ export default function Menu() {
 						contentWidthDown: "none",
 					} as any
 				}
+				color="whiteToSecondary"
 			>
-				<CHLink color="whiteToSecondary" outline="none" asChild>
-					<Link href="/">Home</Link>
-				</CHLink>
+				<ScrollButton
+					_hover={{
+						textDecoration: "underline",
+					}}
+					id="main"
+				>
+					Home
+				</ScrollButton>
 
-				<CHLink color="whiteToSecondary" outline="none" asChild>
-					<Link href="#projects">Projects</Link>
-				</CHLink>
+				<ScrollButton
+					_hover={{
+						textDecoration: "underline",
+					}}
+					id="projects"
+				>
+					Projects
+				</ScrollButton>
 
-				<CHLink color="whiteToSecondary" outline="none" asChild>
-					<Link href="#about">About</Link>
-				</CHLink>
+				<ScrollButton
+					_hover={{
+						textDecoration: "underline",
+					}}
+					id="about"
+				>
+					About
+				</ScrollButton>
 
-				<CHLink color="whiteToSecondary" outline="none" asChild>
-					<Link href="#contact">Contact</Link>
-				</CHLink>
+				<ScrollButton
+					_hover={{
+						textDecoration: "underline",
+					}}
+					id="contact"
+				>
+					Contact
+				</ScrollButton>
 
 				<CHLink
-					color="whiteToSecondary"
+					color="inherit"
 					borderRadius="0.25em"
 					transition="all 0.2s ease-in-out"
 					_hover={{
@@ -153,19 +174,43 @@ export default function Menu() {
 						gap="1em"
 						color="whiteToSecondary"
 					>
-						<CHLink color="inherit" outline="none" asChild>
-							<Link href="/">Home</Link>
-						</CHLink>
+						<ScrollButton
+							_hover={{
+								textDecoration: "underline",
+							}}
+							id="main"
+							onCallback={onToggle}
+						>
+							Home
+						</ScrollButton>
 
-						<ScrollButton id="projects" onCallback={onToggle}>
+						<ScrollButton
+							_hover={{
+								textDecoration: "underline",
+							}}
+							id="projects"
+							onCallback={onToggle}
+						>
 							Projects
 						</ScrollButton>
 
-						<ScrollButton id="about" onCallback={onToggle}>
+						<ScrollButton
+							_hover={{
+								textDecoration: "underline",
+							}}
+							id="about"
+							onCallback={onToggle}
+						>
 							About
 						</ScrollButton>
 
-						<ScrollButton id="contact" onCallback={onToggle}>
+						<ScrollButton
+							_hover={{
+								textDecoration: "underline",
+							}}
+							id="contact"
+							onCallback={onToggle}
+						>
 							Contact
 						</ScrollButton>
 

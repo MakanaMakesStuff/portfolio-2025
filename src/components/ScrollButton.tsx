@@ -31,6 +31,7 @@ export default function ScrollButton({
 				fontWeight: "normal",
 				minHeight: "none",
 				height: "max-content",
+				fontSize: "inherit",
 				...(props.style ?? {}),
 			}}
 		>
