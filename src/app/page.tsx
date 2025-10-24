@@ -29,6 +29,7 @@ import jeff from "../../public/assets/images/jeff bezos.jpg";
 import ul from "../../public/assets/images/projects/ul.png";
 import cliffs from "../../public/assets/images/projects/cliffs.png";
 import windsor from "../../public/assets/images/projects/windsor.png";
+import windriver from "../../public/assets/images/projects/windriver.png";
 import ch from "../../public/assets/images/projects/ch.png";
 import vm from "../../public/assets/images/projects/vm.png";
 
@@ -83,6 +84,32 @@ export default function Home() {
 				type: "img",
 				value: ul.src,
 				url: "https://member.unionleague.org/",
+				urlLabel: "Visit Site",
+				urlIcon: <FaGlobe />,
+			},
+		},
+		{
+			title: "Windriver(Dining System Only)",
+			text: (
+				<>
+					WindRiver, a Lakefront and Golf Community, offers something for
+					everyone – and we’re open daily. Visit us anytime to tour our
+					beautiful property or choose to stay a lifetime in lakefront luxury.
+					With our Club restaurant, world-class golf course designed by Bob
+					Cupp, expansive marina on Tellico Lake, beautifully crafted homes, and
+					other signature amenities, you’re sure to find a lakefront lifestyle
+					you’ll cherish.
+					<br />
+					<br />
+					<strong>
+						Note: I only implemented the dining module of the WindRiver site.
+					</strong>
+				</>
+			),
+			resource: {
+				type: "img",
+				value: windriver.src,
+				url: "https://member.clubwindriver.com/dine",
 				urlLabel: "Visit Site",
 				urlIcon: <FaGlobe />,
 			},
@@ -458,7 +485,7 @@ export default function Home() {
 										mt="1em"
 										asChild
 									>
-										<Link href={project.resource.url}>
+										<Link href={project.resource.url} target="_blank">
 											<span>{project.resource.urlLabel}</span>
 											<Icon asChild>{project.resource.urlIcon}</Icon>
 										</Link>
@@ -481,7 +508,7 @@ export default function Home() {
 								overflow="hidden"
 								asChild
 							>
-								<Link href={project.resource.url!}>
+								<Link href={project.resource.url!} target="_blank">
 									{project.resource.type == "component" ? (
 										project.resource.value
 									) : project.resource.type == "video" ? (
@@ -575,7 +602,7 @@ export default function Home() {
 										mt="1em"
 										asChild
 									>
-										<Link href={project.resource.url}>
+										<Link href={project.resource.url} target="_blank">
 											<span>{project.resource.urlLabel}</span>
 											<Icon asChild>{project.resource.urlIcon}</Icon>
 										</Link>
@@ -640,7 +667,7 @@ export default function Home() {
 							</Text>
 						</Box>
 
-						<Gallery id="galler" />
+						<Gallery id="gallery" />
 
 						<Text color="primaryToWhite">Enough said.</Text>
 
